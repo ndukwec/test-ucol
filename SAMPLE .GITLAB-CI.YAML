@@ -1,0 +1,67 @@
+variables:
+  IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+  # DATABASE_URL: "" # Depends on the situation
+stages:
+  - build-image
+  - test
+  - deploy
+  # Note we can also add an sast stage see line 52 below
+
+build-image:
+  image: docker:latest
+  stage: build-image
+  services:
+    - docker:dind
+  tags:
+    - docker
+
+  script:
+    - export
+    - docker build -t $IMAGE_TAG .
+    - docker login -u  -p
+    - docker push $IMAGE_TAG
+
+# student tests
+# Note that I have test 1, 2, 3 but these can be easily renamed to be actual job_names
+# also each job can have a before and after script
+test 1:
+  stage: test
+  script: # here we'll specify our actual test script
+    # e.g - python manage.py test for a Django application. In our case we can test the id function we have in the python script included
+  allow_failure: false
+
+# open tests
+test 2:
+  stage: test
+  script: echo "Running open test" # specify test script
+  allow_failure: false
+# closed tests
+test 3:
+  stage: test
+  script: echo "Running closed test" # specify test script
+  allow_failure: false
+
+deploy:
+  stage: deploy
+  image: debian # Just an example
+  script:
+    - echo "trying to deploy"
+    - apt-get update
+    - apt-get install ....
+
+# sast:
+#   stage: sast
+#   image: docker:stable
+#   variables:
+#     DOCKER_DRIVER: # we can specify the docker driver i.e OverlayFS storage driver: e.g overlay2
+#   allow_failure:
+#   services:
+#     - docker:stable-dind
+#   script:
+#     - export SP_VERSION=$ # We can export the CI server version etc
+#     - docker run
+#         # We can set the confidence level, volume etc
+#   artifacts:
+#     reports:
+#       sast: gl-sast-report.json
+
