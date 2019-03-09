@@ -27,7 +27,7 @@ build-image:
 test 1:
   stage: test
   script: # here we'll specify our actual test script
-    # e.g - python manage.py test for a Django application. In our case we can test the id function we have in the python script included
+    # e.g - python manage.py test for a Django application. In our case we can test the id_func function we have in the python script included
   allow_failure: false
 
 # open tests

@@ -1,0 +1,26 @@
+Full Disclosure: I haven't worked extensively with any autograding functionality or servers yet in my career (in higher-ed)
+but I am willing to take sometime to learn more (Already doing so) about how they work and how we can implement them
+correctly in this instance however below are details of how I would implement all tests needed to our CI system with
+my current knowledge of CI/CD and DevOps in general.
+
+The repos where student would submit their code will have .gitlab-ci.yml files and pre-written Dockerfiles
+all in place, if you look at my .gitlab-ci.yml file, you will see that I added sections for three tests,
+these would cover the three test cases stated in the exercise document.
+
+
+The closed test could be a python test suite implemented with the unittest module with assertions to match or cover
+expected results of what the students code should do.
+
+
+When a student pushes code (an example code is the identityfunc.py python file included : which is just a python
+function that returns a tuple containing arguments passed into the function) to the repo, with our pipeline already
+setup, the docker image will be built and all tests cases and our autograding functionality declared as stages will kick
+in, thereafter if there is any deployment that needs to occur, the deploy stage will take care of that. I have added
+comments to the ci yml file to further explain what some configurations mean/do as well as an optional sast stage: see
+(https://docs.gitlab.com/ee/user/project/merge_requests/sast.html) for more about SAST.
+
+
+
+Afterthoughts: I should also say that I spent sometime ready this paper
+https://www.cs.cmu.edu/~droh/papers/autolab-ieee-ic.pdf which highlights some feature of how CMU implemented
+autograding but this has little to do with CI/CD pipelines.
