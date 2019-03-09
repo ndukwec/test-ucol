@@ -11,7 +11,7 @@ these would cover the three test cases stated in the exercise document.
 The closed test could be a python test suite implemented with the unittest module with assertions to match or cover
 expected results of what the students code should do.
 
-For the student test, I added a sample testcase to make sure my id function returns the expected output
+For the student test, I added a sample testcase to make sure my id function returns the expected output.
 
 
 When a student pushes code (an example code is the identityfunc.py python file included : which is just a python
@@ -23,6 +23,13 @@ comments to the ci yml file to further explain what some configurations mean/do 
 
 
 
-Afterthoughts: I should also say that I spent sometime ready this paper
+Afterthoughts:
+I should also say that docker image builds successfully as it is but we can improve on it's size by using a
+smaller base image tailored to a specific project, in this case however, I used an Ubuntu base image for the purpose of
+generalization. For specific images: alter the docker file to your choice of a specific official image from docker hub
+- https://hub.docker.com/
+
+I should also say that I spent sometime ready this paper
 https://www.cs.cmu.edu/~droh/papers/autolab-ieee-ic.pdf which highlights some feature of how CMU implemented
 autograding but this has little to do with CI/CD pipelines.
+
