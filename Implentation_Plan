@@ -24,10 +24,11 @@ comments to the ci yml file to further explain what some configurations mean/do 
 
 
 Afterthoughts:
-I should also say that docker image builds successfully as it is but we can improve on it's size by using a
-smaller base image tailored to a specific project, in this case however, I used an Ubuntu base image for the purpose of
-generalization. For specific images: alter the docker file to your choice of a specific official image from docker hub
-- https://hub.docker.com/
+I should say that the docker container image builds and runs successfully as it is but we can improve on it's size
+by using a smaller base image tailored to a specific project, in this case however, I used an Ubuntu base image for the
+purpose of generalization.
+For specific images: alter the dockerfile to your choice of a specific official base image, I recommend alpine
+Checkout - https://hub.docker.com/
 
 I should also say that I spent sometime ready this paper
 https://www.cs.cmu.edu/~droh/papers/autolab-ieee-ic.pdf which highlights some feature of how CMU implemented
