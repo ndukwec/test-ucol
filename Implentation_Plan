@@ -3,7 +3,7 @@ but I am willing to take sometime to learn more (Already doing so) about how the
 correctly in this instance however below are details of how I would implement all tests needed to our CI system with
 my current knowledge of CI/CD and DevOps in general.
 
-The repos where student would submit their code will have .gitlab-ci.yml files and pre-written Dockerfiles
+The repos where students would submit their code will have .gitlab-ci.yml files and pre-written Dockerfiles
 all in place, if you look at my .gitlab-ci.yml file, you will see that I added sections for three tests,
 these would cover the three test cases stated in the exercise document.
 
