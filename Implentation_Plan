@@ -8,8 +8,7 @@ all in place, if you look at my .gitlab-ci.yml file, you will see that I added s
 these would cover the three test cases stated in the exercise document.
 
 
-The closed test could be a python test suite implemented with the unittest module with assertions to match or cover
-expected results of what the students code should do.
+The closed test could be a test suite implemented with assertions to match or cover expected results of what the students code should do.
 
 For the student test, I added a sample testcase to make sure my id function returns the expected output.
 
