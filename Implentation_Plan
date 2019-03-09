@@ -7,7 +7,8 @@ all in place, if you look at my .gitlab-ci.yml file, you will see that I added s
 these would cover the three test cases stated in the exercise document.
 
 The closed test could be a test suite implemented with assertions to match or cover expected results of what the
-students code should do.
+students code should do. Here perhaps we could add some autograding functions specifying student grades for several expected
+outcomes.
 
 For the student test, I added a sample testcase to make sure my id function returns the expected output.
 
@@ -19,7 +20,7 @@ comments to the ci yml file to further explain what some configurations mean/do 
 (https://docs.gitlab.com/ee/user/project/merge_requests/sast.html) for more about SAST.
 
 For repos that have an active deploy stage, we could setup pre-commit hooks to ensure credible commits before reaching
-the build pipeline.
+our build pipeline. We could also have tests to detect and ensure that committed code contain no secrets of any sorts.
 
 
 Afterthoughts:
