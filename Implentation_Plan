@@ -1,16 +1,17 @@
 Full Disclosure: I haven't worked extensively with any autograding functionality or servers yet in my career (in higher-ed)
-but I am willing to take sometime to learn more (already doing so) about how they work and how we can implement them
+but I am willing to take some time to learn more (already doing so) about how they work and how we can implement them
 correctly in this instance. However below are details of my implementation plan.
 
 All repos where students would submit their code to will have individual .gitlab-ci.yml files and pre-written Dockerfiles
-all in place, if you look at my .gitlab-ci.yml file, you will see that I added sections for three tests,
+all in place. If you look at my .gitlab-ci.yml file, you will see that I added sections for three tests,
 these would cover the three test cases stated in the exercise document.
 
 The closed test could be a test suite implemented with assertions to match or cover expected results of what the
 students code should do. Here perhaps we could add some autograding functions specifying student grades for several expected
 outcomes.
 
-For the student test, I added a sample testcase to make sure my id function returns the expected output.
+For the student test, I added a sample testcase (see testingidentityfunc.py) to make sure my id function returns
+the expected output.
 
 When a student pushes code (an example code is the identityfunc.py python file included : which is just a python
 function that returns a tuple containing arguments passed into the function) to the repo, with our pipeline already
@@ -24,7 +25,7 @@ our build pipeline. We could also have tests to detect and ensure that committed
 
 
 Afterthoughts:
-I should say that the docker container image builds and runs successfully as it is, but we can improve on it's size
+I should say that the docker container image builds and runs successfully as it is, but we can improve on its size
 by using a smaller base image tailored to a specific project, in this case however, I used an Ubuntu base image for the
 purpose of generalization.
 For specific images: alter the dockerfile to your choice of an official base image, I recommend alpine
