@@ -22,11 +22,3 @@ comments to the ci yml file to further explain what some configurations mean/do 
 
 For repos that have an active deploy stage, we could setup pre-commit hooks to ensure credible commits before reaching
 our build pipeline. We could also have tests to detect and ensure that committed code contain no secrets of any sorts.
-
-
-Afterthoughts:
-I should say that the docker container image builds and runs successfully as it is, but we can improve on its size
-by using a smaller base image tailored to a specific project, in this case however, I used an Ubuntu base image for the
-purpose of generalization.
-For specific images: alter the dockerfile to your choice of an official base image, I recommend alpine
-Checkout - https://hub.docker.com/
