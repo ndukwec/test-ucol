@@ -19,7 +19,7 @@ build-image:
     - export
     - docker build -t $IMAGE_TAG .
 #    - docker login -u  -p # auth to container registry
-    - docker push $IMAGE_TAG
+#    - docker push $IMAGE_TAG
 
 # student tests
 # Note that I have test 1, 2, 3 but these can be easily renamed to be actual specific job_names
