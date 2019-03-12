@@ -6,6 +6,9 @@ All repos where students would submit their code to will have individual .gitlab
 all in place. If you look at my .gitlab-ci.yml file, you will see that I added sections for three tests,
 these would cover the three test cases stated in the exercise document.
 
+I think we can set up both non student (open and closed) tests to run in a separate custom Docker images, and spin up those services for testing
+but I'll leave that in the implementation plan.
+
 The closed test could be a test suite implemented with assertions to match or cover expected results of what the
 students code should do. Here perhaps we could add some autograding functions specifying student grades for several expected
 outcomes.
@@ -22,7 +25,3 @@ comments to the ci yml file to further explain what some configurations mean/do 
 
 For repos that have an active deploy stage, we could setup pre-commit hooks to ensure credible commits before reaching
 our build pipeline. We could also have tests to detect and ensure that committed code contain no secrets of any sorts.
-
-Afterthought:
-I think we can set up both non student tests to run in a separate custom Docker images, and spin up those services for testing
-but I'll leave that in the implementation plan.
