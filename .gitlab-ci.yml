@@ -5,7 +5,7 @@ stages:
   - build-image
   - test
   - deploy
-  # Note we can also add a sast stage see line 52 below
+  # Note we can also add a sast stage see line 53 below
 
 build-image:
   image: docker:latest
@@ -18,8 +18,8 @@ build-image:
   script:
     - export
     - docker build -t $IMAGE_TAG .
-#    - docker login -u  -p # auth to container registry
-#    - docker push $IMAGE_TAG
+    # - docker login -u  -p # auth to container registry
+    # - docker push $IMAGE_TAG
 
 # student tests
 # Note that I have test 1, 2, 3 but these can be easily renamed to be actual specific job_names
@@ -29,7 +29,7 @@ test 1:
   script: # here we'll specify our actual test script
     # e.g - python manage.py test for a Django application.
     # In our case we can test the id_func function we have in the python script included with python3 -m unittest testingidentityfunc.py
-    - echo "Running student test"
+      - echo "Running student test"
   allow_failure: false
 
 # open tests
