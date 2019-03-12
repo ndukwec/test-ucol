@@ -18,7 +18,7 @@ build-image:
   script:
     - export
     - docker build -t $IMAGE_TAG .
-    - docker login -u  -p # -u -p password auth to container registry
+    - docker login -u  -p # auth to container registry
     - docker push $IMAGE_TAG
 
 # student tests
