@@ -24,4 +24,5 @@ For repos that have an active deploy stage, we could setup pre-commit hooks to e
 our build pipeline. We could also have tests to detect and ensure that committed code contain no secrets of any sorts.
 
 Afterthought:
-I think we can set up both non student tests to run in a different container but I'll leave that in the implementation plan.
+I think we can set up both non student tests to run in a separate custom Docker images, and spin up those services for testing
+but I'll leave that in the implementation plan.
