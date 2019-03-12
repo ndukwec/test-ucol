@@ -22,3 +22,8 @@ comments to the ci yml file to further explain what some configurations mean/do 
 
 For repos that have an active deploy stage, we could setup pre-commit hooks to ensure credible commits before reaching
 our build pipeline. We could also have tests to detect and ensure that committed code contain no secrets of any sorts.
+
+Afterthought:
+I think we can separate all tests from the application if we use Docker Compose, we can set up a test to run in a different
+container but for the purposes of this test and since I am using Gitlab CI, I'll leave that in the implementation plan.
+
