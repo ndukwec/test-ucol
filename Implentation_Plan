@@ -32,5 +32,5 @@ across https://github.com/autolab from the folks at CMU but I am not sure if any
 There's also Gradescope but I am still reading about that.
 
 Other (Crazy) Idea:
-We could use Kubernetes to manage the containers built from the student repos and somehow integrate the teachers test
-application to test each artifact, I might be overoptimistic here.
+We could use Kubernetes to manage the containers built from the student repos and somehow integrate the teachers closed
+test to test each artifact, I might be overoptimistic here.
