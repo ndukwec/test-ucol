@@ -1,5 +1,5 @@
 Full Disclosure: I haven't worked extensively with any autograding functionality or servers yet in my career (in higher-ed)
-but I am willing to take some time to learn more (already doing so) about how they work and how we can implement them
+but I am willing to take some time to learn more (already doing so: found out about Web-CAT etc.) about how they work and how we can implement them
 correctly in this instance. However below are details of my implementation plan.
 
 All repos where students would submit their code to will have individual .gitlab-ci.yml files and pre-written Dockerfiles
@@ -25,3 +25,8 @@ comments to the ci yml file to further explain what some configurations mean/do 
 
 For repos that have an active deploy stage, we could setup pre-commit hooks to ensure credible commits before reaching
 our build pipeline. We could also have tests to detect and ensure that committed code contain no secrets of any sorts.
+
+Afterthought:
+I should also say that I did some research online to see if any libraries out there are useful for autograding and came
+across https://github.com/autolab from the folks at CMU but I am not sure if anyone at CU has looked at that yet.
+There's also Gradescope but I am still reading about that.
