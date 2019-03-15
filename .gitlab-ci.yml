@@ -30,18 +30,23 @@ test 1:
     # e.g - python manage.py test for a Django application.
     # In our case we can test the id_func function we have in the python script included with python3 -m unittest testingidentityfunc.py
       - echo "Running student test"
+      - python3 -m unittest testingidentityfunc.py
   allow_failure: false
 
 # open tests
 test 2:
   stage: test
-  script: echo "Running open test" # specify test script
+  script: 
+      - echo "Running open test" 
+      # specify test script
   allow_failure: false
 
 # closed tests
 test 3:
   stage: test
-  script: echo "Running closed test" # specify test script
+  script: 
+      - echo "Running closed test" 
+      - sh test.sh # specifying our closed test script
   allow_failure: false
 
 deploy:

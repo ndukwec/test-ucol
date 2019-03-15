@@ -1,0 +1,4 @@
+# optionally adding our closed test (or any file with names starting with closed) here so it does not build with docker
+
+*/closed*
+closedtest.py
