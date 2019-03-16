@@ -1,5 +1,7 @@
 variables:
   IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+  USER_EMAIL: $GITLAB_USER_EMAIL  # we want the user_email of whoever triggered our pipeline
+  USER_NAME: $GITLAB_USER_NAME  # we want the user_name of whoever triggered our pipeline
 stages:
   - build-image
   - test
@@ -18,24 +20,24 @@ build-image:
     - docker build -t $IMAGE_TAG .
 
 # student tests
-student test:
+student-test:
   stage: test
   script:
       - python3 -m unittest testingidentityfunc.py
   allow_failure: false
 
 # closed tests
-closed test:
+closed-test:
   stage: test
   image: python:3.7-alpine
   script:
     - python3 -m unittest closedtest.py
   allow_failure: false
 
-grade student:
+grade-student:
   script:
     - echo 'Now Grading Student'
-    - sh grade.sh
+    - sh grade.sh $USER_EMAIL $USER_NAME # we pass in the variables declared above on lines 3 & 4
 
 deploy:
   stage: deploy

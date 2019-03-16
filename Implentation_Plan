@@ -1,0 +1,13 @@
+Okay so I have gone ahead and implemented a closed test and a grader.py script which will grade the student.
+There are two possible things that we could do now:
+    a.) We could create a webhook receiver that will send the details of our pipeline events to the
+    teachers email, this will include the students email, and the build status
+    see https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#pipeline-events
+
+    b.) The other option is to use our grader.py to send an email to the teacher or even a post request to another API
+    with information about our build status, if and only if the student passed code worked, i.e if our
+    closed test ran successfully
+
+
+I will be choosing option b.) as it's the quickest option,
+we can always explore/implement option a.) when I get the job :-)
