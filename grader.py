@@ -1,30 +1,21 @@
 from closedtest import *
 
-# her we implement a Grader class to grade our student by running tests from our closedtest
-
-
-class Grader(object):
-    # student score
-    score = 1
-
 
 def check_unit_test_and_set_grade():
-    student_grade = Grader()
-    # Here we check what if the student passed the test but running our test and grading the student
+    student_score = 0
+    # below will check again to make sure we pass our test
     result_from_unittest = unittest.TextTestRunner().run(ClosedTest('test_closed_test')).wasSuccessful()
     if result_from_unittest:
-        student_grade.score = 0
+        student_score = 1
+        # we could make a post request here with the students info to grade the student
         print("Student passed test")
-        return 0
-    print("Student failed the test")
-    return 1
+    else:
+        print("Student failed test")
+    return student_score
 
 
 def main():
-    if check_unit_test_and_set_grade() == 1:
-        return 1
-    else:
-        return 0
+    check_unit_test_and_set_grade()
 
 
 if __name__ == '__main__':

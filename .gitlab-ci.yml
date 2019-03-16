@@ -16,16 +16,11 @@ build-image:
   script:
     - export
     - docker build -t $IMAGE_TAG .
-    # - docker login -u  -p # auth to container registry
-    # - docker push $IMAGE_TAG
 
 # student tests
-# also each job can have a before and after script
 student test:
   stage: test
-  script: # here we'll specify our actual test script
-    # e.g - python manage.py test for a Django application.
-    # In our case we can test the id_func function we have in the python script included with python3 -m unittest testingidentityfunc.py
+  script:
       - python3 -m unittest testingidentityfunc.py
   allow_failure: false
 
@@ -36,6 +31,11 @@ closed test:
   script:
     - python3 -m unittest closedtest.py
   allow_failure: false
+
+grade student:
+  script:
+    - echo 'Now Grading Student'
+    - sh grade.sh
 
 deploy:
   stage: deploy
