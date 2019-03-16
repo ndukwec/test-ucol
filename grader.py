@@ -16,7 +16,7 @@ def check_unit_test_and_set_grade():
 
 def main():
     value_returned_from_test_method_above = check_unit_test_and_set_grade()
-    print(f"outcome from function call above is {value_returned_from_test_method_above}")
+    print("the outcome from function call above is " + str(value_returned_from_test_method_above))
 
 
 if __name__ == '__main__':
