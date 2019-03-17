@@ -59,10 +59,11 @@ def main():
     value_returned_from_test_method = check_unit_test_and_set_grade()
     print("the outcome from function call above is " + str(value_returned_from_test_method))
     if value_returned_from_test_method == 1:
+        print("student passed our test so we'll now call our utility function with the student data to send "
+              "email and post request to our api")
         utility_func(student_info)
     else:
-        print("student failed our test")
-        return 1
+        print("closed test must have failed therefore student failed our test")
 
 
 if __name__ == '__main__':
