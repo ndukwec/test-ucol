@@ -16,28 +16,40 @@ def check_unit_test_and_set_grade():
     return student_score
 
 
-def send_post_request_and_email_to_teacher(student_email_data):
+def send_email_to_teacher(student_email):
+    # here we will send the students email (who passed our test) to the teacher's email
     # teachers_email = "chinedua@umich.edu"
     # msg = EmailMessage()
-    print(len(student_email_data))
-    if len(student_email_data) > 0:
-        print("sending student data to teacher! or to rest service")
-        # now we send the data
-        for i in range(len(student_email_data)):
-            print("student with email: " + student_email_data[i] + " passed our test, now grade the student!")
-    else:
-        print("our list is empty :-(")
-
-    # msg['Subject'] = 'The following students passed our test'
+    # msg.set_content("The student with the following email passed the test " + student_email)
+    #
+    # msg['Subject'] = 'Student Passed Our Test'
     # msg['From'] = 'chineduamadindukwe2016@gmail.com'
-    # msg['To'] = teachers_email if " " else 'chinedua@umich.edu'  # Teachers email passed in from our function
-    # # call in mail, ternary operator to sure we don't have an empty string
-
-    # s = smtplib.SMTP('smtp.gmail.com')  # we could pass in our specific smtp server here,
-    # i passed in gmail as an example
-
+    # msg['To'] = teachers_email if " " else 'chinedua@umich.edu'
+    #
+    # s = smtplib.SMTP('smtp.gmail.com')
+    # # we could pass in our specific smtp server above,
+    # # i passed in gmail just as an example
+    #
     # s.send_message(msg)
     # s.quit()
+    print("hey teacher, student with email: " + student_email + " passed our test.")
+
+
+def send_post_request_to_api(student_email):
+    # Here we'll send a post request with the students email to our custom api built with flask or django.
+    # we could also integrate other learning platforms api e.g canvas, moodle etc here
+    print("student with email: " + student_email + " will be sent in a post request here.")
+
+
+def utility_func(student_email_data):
+    print(len(student_email_data))
+    if len(student_email_data) > 0:
+        # now we send the students email by calling our functions defined above
+        for i in range(len(student_email_data)):
+            send_email_to_teacher(student_email_data[i])
+            send_post_request_to_api(student_email_data[i])
+    else:
+        print("our list is empty :-(")
 
 
 def main():
@@ -47,7 +59,7 @@ def main():
     value_returned_from_test_method = check_unit_test_and_set_grade()
     print("the outcome from function call above is " + str(value_returned_from_test_method))
     if value_returned_from_test_method == 1:
-        send_post_request_and_email_to_teacher(student_info)
+        utility_func(student_info)
 
 
 if __name__ == '__main__':
