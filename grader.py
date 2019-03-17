@@ -58,7 +58,7 @@ def main():
     # we had to slice the list above to remove our script name which of course is the first argument at index 0
     value_returned_from_test_method = check_unit_test_and_set_grade()
     if value_returned_from_test_method == 1:
-        print("student passed our test so we'll now call our utility function with the student data to send "
+        print("Student passed our test so we'll now call our utility function with the student data to send "
               "email and post request to our api")
         utility_func(student_info)
     else:
