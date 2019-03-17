@@ -9,7 +9,7 @@ The functions in the grader.py are named appropriately, in grader.py all the mag
 
 Other Options
 There's also other options if we didn't want our in house custom api, we could use gitlab's api or create webhooks
-that will send pipeline information to our webhook reciever.
+that will send pipeline information to our webhook receiver.
 
 For gitlab webhooks see: https://docs.gitlab.com/ee/user/project/integrations/webhooks.html
 For gitlab api see: https://docs.gitlab.com/ee/api/
