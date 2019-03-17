@@ -60,6 +60,9 @@ def main():
     print("the outcome from function call above is " + str(value_returned_from_test_method))
     if value_returned_from_test_method == 1:
         utility_func(student_info)
+    else:
+        print("student failed our test")
+        return 1
 
 
 if __name__ == '__main__':

@@ -13,3 +13,8 @@ that will send pipeline information to our webhook receiver.
 
 For gitlab webhooks see: https://docs.gitlab.com/ee/user/project/integrations/webhooks.html
 For gitlab api see: https://docs.gitlab.com/ee/api/
+
+Next Steps
+my next step will be to implement an api in django which will receive the post request we'll send from our grader.py
+and update a webpage with the students email who passed our test, students can go to this django powered website to see
+if their email shows up i.e to know if they passed or not
