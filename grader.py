@@ -42,7 +42,7 @@ def send_post_request_to_api(student_email):
 
 
 def utility_func(student_email_data):
-    print(len(student_email_data))
+    print("\nFrom inside our utility function: ")
     if len(student_email_data) > 0:
         # now we send the students email by calling our functions defined above
         for i in range(len(student_email_data)):
@@ -57,7 +57,6 @@ def main():
     # line above creates a list of strings with the student details (username and email)
     # we had to slice the list above to remove our script name which of course is the first argument at index 0
     value_returned_from_test_method = check_unit_test_and_set_grade()
-    print("the outcome from function call above is " + str(value_returned_from_test_method))
     if value_returned_from_test_method == 1:
         print("student passed our test so we'll now call our utility function with the student data to send "
               "email and post request to our api")
